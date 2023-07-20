@@ -7,12 +7,12 @@ import lombok.Setter;
 import utils.CarConstants;
 import utils.CarType;
 
-public class ElectricCar implements Car {
+public class SportsCar implements Car {
 	@Getter
 	private String id;
 	@Setter
 	@Getter
-	private int batteryVolume;
+	private boolean turbo;
 	@Setter
 	@Getter
 	private int wheelsCount;
@@ -30,13 +30,13 @@ public class ElectricCar implements Car {
 	private int numberOfDoors;
 	@Setter
 	@Getter
-	private CarType carType;
+	private CarType carType; 
 
-	public ElectricCar() {
+	public SportsCar() {
 		this.id = UUID.randomUUID().toString();
-		this.carType = CarType.ELECTRIC;
-		this.setBatteryVolume(200);
-		this.setColor(CarConstants.RED);
+		this.carType=CarType.SPORT; 
+		this.setTurbo(true);
+		this.setColor(CarConstants.BLUE);
 		this.setFullSpecs(true);
 		this.setHorsePower(150);
 		this.setNumberOfDoors(4);
@@ -45,7 +45,7 @@ public class ElectricCar implements Car {
 
 	@Override
 	public void build() {
-		System.out.println("Build Electric Car");
+		System.out.println("Build Sport Car");
 	}
 
 }
